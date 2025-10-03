@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyMatch - Find Your Perfect Home</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">
+                <i class="bi bi-house-heart me-2"></i>PropertyMatch
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav-actions">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="navbar-actions">
+                        <a href="login.html" class="btn btn-outline-primary me-2">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                        </a>
+                        <a href="register.html" class="btn btn-primary">
+                            <i class="bi bi-person-plus me-1"></i>Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Search Banner -->
+    <section class="banner-section">
+        <div class="banner-container">
+            <div class="banner-image">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2V8ZW58MHx8MHx8fDA%3D" alt="Luxury Property">
+            </div>
+            <div class="banner-overlay">
+                <div class="container">
+                    <div class="banner-content">
+                        <h1 class="display-3 fw-bold text-white mb-4">
+                            AI-Powered <span class="text-warning">Property Search</span>
+                        </h1>
+                        <p class="lead text-white mb-4">
+                            Discover your perfect property with our advanced AI matching system. 
+                            Get personalized recommendations based on your preferences and lifestyle.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <button class="btn btn-warning btn-lg">
+                                <i class="bi bi-robot me-2"></i>Try AI Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="py-5 bg-gradient-light d-none">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="luxury-search-card">
+                        <div class="search-header">
+                            <h2 class="search-title">
+                                <i class="bi bi-search me-3"></i>Find Your Dream Property
+                            </h2>
+                            <p class="search-subtitle">Discover luxury properties with our AI-powered matching system</p>
+                        </div>
+                        
+                        <!-- Luxury Search Form -->
+                        <form class="luxury-search-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="location" class="form-label">
+                                        <i class="bi bi-geo-alt-fill me-2"></i>Location
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <input type="text" class="form-input" id="location" placeholder="Enter city, neighborhood, or address">
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="propertyType" class="form-label">
+                                        <i class="bi bi-building me-2"></i>Property Type
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select class="form-select" id="propertyType">
+                                            <option value="">Any Type</option>
+                                            <option value="apartment">Apartment</option>
+                                            <option value="house">House</option>
+                                            <option value="condo">Condo</option>
+                                            <option value="townhouse">Townhouse</option>
+                                            <option value="penthouse">Penthouse</option>
+                                            <option value="villa">Villa</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="minPrice" class="form-label">
+                                        <i class="bi bi-currency-dollar me-2"></i>Min Price
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select class="form-select" id="minPrice">
+                                            <option value="">Any</option>
+                                            <option value="50000">$50,000</option>
+                                            <option value="100000">$100,000</option>
+                                            <option value="200000">$200,000</option>
+                                            <option value="300000">$300,000</option>
+                                            <option value="500000">$500,000</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="maxPrice" class="form-label">
+                                        <i class="bi bi-currency-dollar me-2"></i>Max Price
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select class="form-select" id="maxPrice">
+                                            <option value="">Any</option>
+                                            <option value="200000">$200,000</option>
+                                            <option value="300000">$300,000</option>
+                                            <option value="500000">$500,000</option>
+                                            <option value="1000000">$1,000,000</option>
+                                            <option value="2000000">$2,000,000</option>
+                                            <option value="5000000">$5,000,000+</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bedrooms" class="form-label">
+                                        <i class="bi bi-door-open me-2"></i>Bedrooms
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select class="form-select" id="bedrooms">
+                                            <option value="">Any</option>
+                                            <option value="1">1+</option>
+                                            <option value="2">2+</option>
+                                            <option value="3">3+</option>
+                                            <option value="4">4+</option>
+                                            <option value="5">5+</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bathrooms" class="form-label">
+                                        <i class="bi bi-droplet me-2"></i>Bathrooms
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select class="form-select" id="bathrooms">
+                                            <option value="">Any</option>
+                                            <option value="1">1+</option>
+                                            <option value="2">2+</option>
+                                            <option value="3">3+</option>
+                                            <option value="4">4+</option>
+                                            <option value="5">5+</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sqft" class="form-label">
+                                        <i class="bi bi-rulers me-2"></i>Min Square Feet
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <input type="number" class="form-input" id="sqft" placeholder="e.g., 1000">
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="features" class="form-label">
+                                        <i class="bi bi-star me-2"></i>Features
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select class="form-select" id="features">
+                                            <option value="">Any Features</option>
+                                            <option value="pool">Swimming Pool</option>
+                                            <option value="garage">Garage</option>
+                                            <option value="garden">Garden</option>
+                                            <option value="balcony">Balcony</option>
+                                            <option value="elevator">Elevator</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="search-actions">
+                                <button type="submit" class="luxury-search-btn">
+                                    <i class="bi bi-search me-2"></i>
+                                    <span>Search Properties</span>
+                                    <div class="btn-shine"></div>
+                                </button>
+                                
+                                <button type="button" class="luxury-filter-btn">
+                                    <i class="bi bi-funnel me-2"></i>
+                                    Advanced Filters
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="py-5 d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Featured Properties</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Property Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 class="card-img-top" alt="Modern House">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-success">For Sale</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 m-3">
+                                <span class="badge bg-white text-dark">
+                                    <i class="bi bi-camera me-1"></i>12 Photos
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Modern Family Home</h5>
+                            <p class="card-text text-muted">
+                                <i class="bi bi-geo-alt me-1"></i>123 Oak Street, Downtown
+                            </p>
+                            
+                            <div class="row text-center mb-3">
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-door-open text-primary"></i>
+                                        <small class="d-block text-muted">3 Bed</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-droplet text-primary"></i>
+                                        <small class="d-block text-muted">2 Bath</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-rulers text-primary"></i>
+                                        <small class="d-block text-muted">1,200 sqft</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="text-primary mb-0">$450,000</h4>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 class="card-img-top" alt="Luxury Apartment">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-primary">For Rent</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 m-3">
+                                <span class="badge bg-white text-dark">
+                                    <i class="bi bi-camera me-1"></i>8 Photos
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Luxury Downtown Apartment</h5>
+                            <p class="card-text text-muted">
+                                <i class="bi bi-geo-alt me-1"></i>456 Main Avenue, City Center
+                            </p>
+                            
+                            <div class="row text-center mb-3">
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-door-open text-primary"></i>
+                                        <small class="d-block text-muted">2 Bed</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-droplet text-primary"></i>
+                                        <small class="d-block text-muted">2 Bath</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-rulers text-primary"></i>
+                                        <small class="d-block text-muted">950 sqft</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="text-primary mb-0">$2,500/mo</h4>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="property-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 class="card-img-top" alt="Cozy Townhouse">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-success">For Sale</span>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 m-3">
+                                <span class="badge bg-white text-dark">
+                                    <i class="bi bi-camera me-1"></i>15 Photos
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Cozy Townhouse</h5>
+                            <p class="card-text text-muted">
+                                <i class="bi bi-geo-alt me-1"></i>789 Pine Street, Suburbs
+                            </p>
+                            
+                            <div class="row text-center mb-3">
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-door-open text-primary"></i>
+                                        <small class="d-block text-muted">4 Bed</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-droplet text-primary"></i>
+                                        <small class="d-block text-muted">3 Bath</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="property-feature">
+                                        <i class="bi bi-rulers text-primary"></i>
+                                        <small class="d-block text-muted">1,800 sqft</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="text-primary mb-0">$380,000</h4>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-primary btn-lg">
+                    View All Properties
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Our Services</h2>
+                        <p class="lead text-muted">Comprehensive property solutions tailored to your needs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1: Property Search -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Smart Property Search</h4>
+                            <p>Advanced AI-powered search engine that finds properties matching your exact criteria and preferences.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle"></i> AI-powered matching</li>
+                                <li><i class="bi bi-check-circle"></i> Real-time updates</li>
+                                <li><i class="bi bi-check-circle"></i> Custom filters</li>
+                            </ul>
+                            <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2: Property Valuation -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Property Valuation</h4>
+                            <p>Get accurate property valuations using market data and AI analysis to make informed decisions.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle"></i> Market analysis</li>
+                                <li><i class="bi bi-check-circle"></i> Price predictions</li>
+                                <li><i class="bi bi-check-circle"></i> Investment insights</li>
+                            </ul>
+                            <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3: Virtual Tours -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-camera-video"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Virtual Property Tours</h4>
+                            <p>Experience properties from anywhere with our immersive 360° virtual tours and 3D walkthroughs.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle"></i> 360° virtual tours</li>
+                                <li><i class="bi bi-check-circle"></i> 3D walkthroughs</li>
+                                <li><i class="bi bi-check-circle"></i> Interactive floor plans</li>
+                            </ul>
+                            <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4: Investment Analysis -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-pie-chart"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Investment Analysis</h4>
+                            <p>Comprehensive investment analysis with ROI calculations, market trends, and growth projections.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle"></i> ROI calculations</li>
+                                <li><i class="bi bi-check-circle"></i> Market trends</li>
+                                <li><i class="bi bi-check-circle"></i> Growth projections</li>
+                            </ul>
+                            <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5: Property Management -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Property Management</h4>
+                            <p>Complete property management services including maintenance, tenant screening, and rent collection.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle"></i> Maintenance tracking</li>
+                                <li><i class="bi bi-check-circle"></i> Tenant screening</li>
+                                <li><i class="bi bi-check-circle"></i> Rent collection</li>
+                            </ul>
+                            <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6: Legal Support -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Legal Support</h4>
+                            <p>Expert legal guidance throughout your property journey with document review and compliance assistance.</p>
+                            <ul class="service-features">
+                                <li><i class="bi bi-check-circle"></i> Document review</li>
+                                <li><i class="bi bi-check-circle"></i> Compliance assistance</li>
+                                <li><i class="bi bi-check-circle"></i> Legal consultation</li>
+                            </ul>
+                            <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-6 fw-bold text-dark mb-3">Success Stories</h2>
+                    <p class="lead text-muted">See what our users have to say about their experience</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"PropertyMatch helped me find my dream home in just 2 weeks! The AI recommendations were spot on."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Sarah Johnson" class="author-image">
+                            <div class="author-info">
+                                <h6>Sarah Johnson</h6>
+                                <span>Home Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"As a real estate investor, PropertyMatch saves me hours of research with its intelligent filtering."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Mike Chen" class="author-image">
+                            <div class="author-info">
+                                <h6>Mike Chen</h6>
+                                <span>Real Estate Investor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The property alerts feature is amazing! I was the first to know about my perfect apartment."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Emily Davis" class="author-image">
+                            <div class="author-info">
+                                <h6>Emily Davis</h6>
+                                <span>Apartment Renter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">Why Choose PropertyMatch?</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-robot text-white"></i>
+                        </div>
+                        <h5>AI-Powered Matching</h5>
+                        <p class="text-muted">Our advanced AI analyzes your preferences to find the perfect property match.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-lightning-charge text-white"></i>
+                        </div>
+                        <h5>Instant Results</h5>
+                        <p class="text-muted">Get real-time property recommendations in seconds, not hours.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-shield-check text-white"></i>
+                        </div>
+                        <h5>Verified Listings</h5>
+                        <p class="text-muted">All properties are verified and updated regularly for accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-house-heart me-2"></i>PropertyMatch
+                    </h5>
+                    <p class="">
+                        Your trusted partner in finding the perfect property. 
+                        Experience the future of real estate with AI-powered matching.
+                    </p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none">Home</a></li>
+                        <li><a href="#" class="text-decoration-none">Search</a></li>
+                        <li><a href="#" class="text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none">Buy</a></li>
+                        <li><a href="#" class="text-decoration-none">Rent</a></li>
+                        <li><a href="#" class="text-decoration-none">Sell</a></li>
+                        <li><a href="#" class="text-decoration-none">Invest</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6 class="mb-3">Contact Info</h6>
+                    <p class="mb-2">
+                        <i class="bi bi-telephone me-2"></i>+1 (555) 123-4567
+                    </p>
+                    <p class="mb-2">
+                        <i class="bi bi-envelope me-2"></i>info@propertymatch.com
+                    </p>
+                    <p class="">
+                        <i class="bi bi-geo-alt me-2"></i>123 Real Estate Ave, City, State 12345
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 PropertyMatch. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
